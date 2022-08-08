@@ -70,6 +70,91 @@ return (
         <span className="lg:block md:hidden hidden">
           <LgScreenCarousel />
         </span>
+        <ul className="lg:hidden block flex overflow-scroll scroll-smooth gap-3 snap-x snap-mandatory touch-pan-x z-0 before:shrink-0 before:w-[10vw] after:shrink-0 after:w-[10vw] no-scrollbar shadow-lg">
+          {projects.map((project, index) => (
+            <li
+              className="shrink-0 snap-center w-full h-full"
+              key={`project-card-${index}`}
+            >
+              <div className="relative">
+                <img
+                src={require(`../../assets/img/carousel/small/${0}.jpeg`)}
+                className="md:block hidden rounded-t-lg lg:rounded-lg"
+                alt={project.name}
+                />
+                <img
+                src={require(`../../assets/img/carousel/small/${1}.jpeg`)}
+                  className="block md:hidden rounded-t-lg lg:rounded-lg"
+                  alt={project.name}
+                />
 
-
+                <div className="px-6 py-4 rounded-b-lg block lg:hidden bg-gradient-to-b from-slate-700 to-slate-600">
+                  <div className={`font-bold mb-2 flex justify-between`}>
+                    <h3 className="text-xl">{project.name}</h3>
+                    <div className="pl-1 text-lg">
+                      {smShowDescription === index ? (
+                        <button
+                          className="text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
+                          onClick={() => toggleSmShowDescription(null)}
+                        >
+                          Less
+                        </button>
+                      ) : (
+                        <button
+                          className="text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
+                          onClick={() => toggleSmShowDescription(index)}
+                        >
+                          More...
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                  {smShowDescription === index && (
+                    <p className="text-lg transition-all ease-in-out duration-300">
+                      {project.description}
+                    </p>
+                  )}
+                  <div className="flex justify-center pt-6">
+                    <div className="grid grid-cols-2 md:gap-10 gap-2">
+                      <div>
+                        <a
+                          className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 md:text-lg text-md rounded transition-all ease-in-out duration-300"
+                          href={project.githubRepo}
+                        >
+                          Github
+                        </a>
+                      </div>
+                      <div>
+                        {index !== 3 &&
+                        index !== 4 &&
+                        index !== 8 &&
+                        index !== 9 &&
+                        index !== 10 ? (
+                          <a
+                            className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 md:text-lg text-md rounded transition-all ease-in-out duration-300"
+                            href={project.deployedUrl}
+                          >
+                            Demo
+                          </a>
+                        ) : (
+                          <a
+                            className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 md:text-lg text-md rounded transition-all ease-in-out duration-300"
+                            href={project.deployedUrl}
+                          >
+                            Tutorial
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </SlideFade>
+  );
 }
+
+export default Projects;
