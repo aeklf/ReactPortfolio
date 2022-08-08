@@ -1,5 +1,5 @@
 import React from 'react';
-import resume from '../../assets/img/resume/resume.pdf';
+import resume from '../../assets/img/resume.pdf';
 import { ScaleFade } from '@chakra-ui/react';
 
 function Resume({ name }) {
