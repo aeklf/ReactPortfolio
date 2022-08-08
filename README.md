@@ -19,5 +19,5 @@ Utilizes:
 
 ## Deployment
 
-View Deployment:
+View GitHub Pages Deployment:
 [https://aeklf.github.io/ReactPortfolio/]
