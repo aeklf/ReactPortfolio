@@ -1,0 +1,85 @@
+/* MAIN CSS */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+}
+
+:root::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.footer-lines {
+  overflow: hidden;
+  text-align: center;
+}
+
+.footer-lines:before,
+.footer-lines:after {
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: 70%;
+  width: 50%;
+}
+
+.footer-lines:before {
+  background-image: linear-gradient(to right, transparent, #f0f9ff);
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.footer-lines:after {
+  background-image: linear-gradient(to left, transparent, #f0f9ff);
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+.lg-carousel {
+  background: #0f172a !important;
+  color: #f0f9ff !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.more-less {
+  display: flex !important;
+  justify-content: end !important;
+  padding-right: 0.2rem;
+  padding-top: 0.5rem;
+}
+
+.desc-align {
+  text-align: left !important;
+}
+
+.pf-team {
+  text-align: center !important;
+}
+
+@import "~react-responsive-carousel/lib/styles/carousel.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.legend {
+  background: #334155;
+}
